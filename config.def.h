@@ -6,7 +6,7 @@ static char *styledir       = "~/.surf/styles/";
 static char *certdir        = "~/.surf/certificates/";
 static char *cachedir       = "~/.surf/cache/";
 static char *cookiefile     = "~/.surf/cookies.txt";
-static char *searchurl      = "duckduckgo.com/?q=%s";
+static char *searchurl      = "google.com/?q=%s";
 
 /* Webkit default features */
 /* Highest priority value will be used.
