@@ -5,8 +5,8 @@ static char *scriptfile     = "~/.surf/script.js";
 static char *styledir       = "~/.surf/styles/";
 static char *certdir        = "~/.surf/certificates/";
 static char *cachedir       = "~/.surf/cache/";
-static char *cookiefile     = "~/.surf/cookies.txt";
 static char *searchurl      = "google.com/search?q=%s";
+static char *cookiefile     = "~/.surf/cookies.txt";
 
 /* Webkit default features */
 /* Highest priority value will be used.
