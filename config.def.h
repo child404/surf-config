@@ -67,6 +67,14 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTIONS_CASE_INSENSITIVE |
 #define PROMPT_GO   "Go:"
 #define PROMPT_FIND "Find:"
 
+#define SEARCH() { \
+        .v = (const char *[]){ "/bin/sh", "-c", \
+             "xprop -id $1 -f $2 8s -set $2 \"" \
+             "$(dmenu -p Search: -w $1 < /dev/null)\"", \
+             "surf-search", winid, "_SURF_SEARCH", NULL \
+        } \
+}
+
 /* SETPROP(readprop, setprop, prompt)*/
 #define SETPROP(r, s, p) { \
         .v = (const char *[]){ "/bin/sh", "-c", \
@@ -74,14 +82,6 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTIONS_CASE_INSENSITIVE |
              "| sed \"s/^$2(STRING) = //;s/^\\\"\\(.*\\)\\\"$/\\1/\")\" " \
              "| dmenu -p \"$4\" -w $1)\" && xprop -id $1 -f $3 8s -set $3 \"$prop\"", \
              "surf-setprop", winid, r, s, p, NULL \
-        } \
-}
-
-#define SEARCH() { \
-        .v = (const char *[]){ "/bin/sh", "-c", \
-             "xprop -id $1 -f $2 8s -set $2 \"" \
-             "$(dmenu -p Search: -w $1 < /dev/null)\"", \
-             "surf-search", winid, "_SURF_SEARCH", NULL \
         } \
 }
 
